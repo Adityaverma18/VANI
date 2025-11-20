@@ -1,222 +1,171 @@
-📌 VANI – Real-Time Speech Emotion & Speaker Recognition System.
-🎙️ Emotion Detection + Speaker Identification (Dual Deep Learning System).
-🧠 Project Overview.
 
-VANI is a real-time Speech Emotion Recognition (SER) and Speaker Recognition system built using Deep Learning.
-The system captures live audio, extracts MFCC features, and simultaneously predicts:
+# 📌 VANI – Real-Time Speech Emotion & Speaker Recognition System
+### 🎙️ Dual Deep Learning System: Emotion Detection + Speaker Identification
 
-🎭 Emotion (Happy, Sad, Angry, Fear, Neutral, Disgust, Surprise).
+## 🧠 Project Overview
+VANI is a real-time deep learning system capable of recognizing **human emotions** and **speaker identity** from live audio.
+It uses **MFCC-based audio processing**, **CNN + BiLSTM models**, and **real-time microphone streaming** to deliver fast, accurate predictions.
 
-🗣️ Speaker Identity (Unique voice-based recognition).
+The system supports:
+- Individuals with Attention Deficiency  
+- Emotion-aware AI systems  
+- Smart assistants and HCI applications
 
-VANI aims to assist individuals with Attention Deficit, increase emotional awareness, and support interactive intelligent systems.
+VANI predicts:
+- 🎭 Emotion (Happy, Sad, Angry, Fear, Neutral, Disgust, Surprise)
+- 🗣️ Speaker Identity (Who is speaking)
 
-🚀 Key Features
+---
 
-✔ Real-time emotion & speaker prediction.
-✔ Dual-model architecture (Emotion + Speaker).
-✔ MFCC feature extraction.
-✔ Conv1D + BiLSTM + Attention Network.
-✔ Live microphone streaming using sounddevice.
-✔ Dataset automation with KaggleHub.
-✔ High accuracy with augmentation, cosine LR annealing, early stopping.
-✔ Scalable, modular project structure.
-✔ Train your own models or use pre-trained ones.
+## 🚀 Key Features
+- Real-time emotion & speaker prediction  
+- MFCC feature extraction  
+- Conv1D + BiLSTM + Attention  
+- Live audio streaming using sounddevice  
+- Automatic dataset download via KaggleHub  
+- High accuracy with augmentation  
+- Cosine LR annealing & early stopping  
+- Modular project structure  
 
-📂 Project Structure
+---
 
-```
+## 📂 Project Structure
 VANI/
-│── main.py
-│── README.md
-│── requirements.txt
-│── data_path.csv
-│── speaker_data.csv
-│
-├── models/
-│    └── README.md  (placeholder, models not uploaded)
-│
-└── src/
-     ├── emotion_data_extraction.py
-     ├── voice_data_seperation.py
-     ├── features.py
-     ├── model_emotion.py
-     ├── model_speaker.py
-     ├── train_emotion.py
-     ├── train_speaker.py
-     ├── predict_emotion.py
-     ├── predict_speaker.py
-     ├── utils.py
-     └── __init__.py
 ```
+│── main.py  
+│── README.md  
+│── requirements.txt  
+│── data_path.csv  
+│── speaker_data.csv  
+│  
+├── models/  
+│    └── README.md  (models not uploaded)  
+│  
+└── src/  
+     ├── emotion_data_extraction.py  
+     ├── voice_data_seperation.py  
+     ├── features.py  
+     ├── model_emotion.py  
+     ├── model_speaker.py  
+     ├── train_emotion.py  
+     ├── train_speaker.py  
+     ├── predict_emotion.py  
+     ├── predict_speaker.py  
+     ├── utils.py  
+     └── __init__.py  
+```
+---
 
+## 📊 Datasets Used
+Emotion:
+- RAVDESS  
+- TESS  
+- CREMA-D  
+- SAVEE  
 
-📊 Datasets Used
-Emotion Recognition
-✔ RAVDESS.
-✔ TESS.
-✔ CREMA-D.
-✔ SAVEE.
+Speaker:
+- Kaggle Speaker Recognition Dataset  
+- Speaker Recognition Audio Dataset  
 
-Speaker Recognition
-✔ Speaker Recognition Audio Dataset (Kaggle).
-✔ VoxCeleb-style structured dataset.
-
-Automatic download using:
-
+Download:
 ```
 import kagglehub
-dataset_path = kagglehub.dataset_download("dataset/name")
+path = kagglehub.dataset_download("dataset/name")
 ```
 
-🛠️ Technologies & Tools
-Machine Learning / Deep Learning
+---
 
-TensorFlow / Keras
+## 🛠️ Technologies Used
+- TensorFlow / Keras  
+- MFCC (Librosa)  
+- Conv1D, BiLSTM, Attention  
+- SoundDevice  
+- NumPy / Pandas  
+- Scikit-Learn  
+- Matplotlib  
 
-Conv1D, BiLSTM, Attention
+---
 
-MFCC Extraction (Librosa)
+## 🧩 Methodology
+### 1️⃣ Audio Input
+- Microphone captures 3s audio  
+- Resampled & normalized  
 
-Cosine Annealing LR Scheduler
+### 2️⃣ Feature Extraction
+- MFCC generation  
+- Padding/truncation  
+- Augmentation: noise, pitch shift, time-stretch  
 
-Early Stopping, Model Checkpoint
+### 3️⃣ Model Processing
+- Emotion: Conv1D + BiLSTM + Attention  
+- Speaker: Conv1D + LSTM  
+- Softmax classification  
 
-Audio Processing
+### 4️⃣ Output Example
+Emotion: Happy (0.87)  
+Speaker: User_03 (0.94)
 
-Librosa
+### 5️⃣ Real-Time Loop
+Record → MFCC → Emotion Model → Speaker Model → Display → Repeat
 
-SoundDevice
+---
 
-NumPy
-
-Data Science
-
-Pandas
-
-Scikit-Learn
-
-Matplotlib
-
-🧩 Methodology
-1️⃣ Audio Input
-
-Live microphone audio
-
-3-second sampling
-
-Normalized to target sample rate
-
-2️⃣ Feature Extraction
-
-Convert raw waveform → MFCC
-
-Padding / Truncating length
-
-Augmentation:
-✔ Noise injection
-✔ Time stretch
-✔ Pitch shift
-
-3️⃣ Model Processing
-🎭 Emotion Model
-
-Conv1D (feature extraction)
-
-BiLSTM (temporal learning)
-
-Attention (focus on strong features)
-
-Softmax prediction
-
-🗣️ Speaker Model
-
-Conv1D + LSTM composite
-
-Optimized with class balancing
-
-4️⃣ Output
-
-```
-Emotion: Happy (0.87 confidence)
-Speaker: User_03 (0.94 confidence)
-```
-
-5️⃣ Real-time Loop
-
-System continuously records → processes → displays → repeats.
-
-🖥️ Installation
-Clone the Repo
-
+## 🖥️ Installation
 ```
 git clone https://github.com/yourname/VANI.git
 cd VANI
-```
-
-Install Dependencies
-```
 pip install -r requirements.txt
 ```
 
-🎓 Training Emotion Model
-```
-python src/train_emotion.py --data_csv data_path.csv --out_dir models --epochs 60 --batch_size 32
-```
+---
 
-🎓 Training Speaker Model
+## 🎓 Training
+Emotion:
 ```
-python src/train_speaker.py --data_csv speaker_data.csv --out_dir models --max_len 130
+python src/train_emotion.py --data_csv data_path.csv --out_dir models
 ```
 
-🎤 Run Real-Time System
+Speaker:
 ```
-python main.py --max_len 130 \
- --emotion_model models/emotion_model_final.keras \
- --speaker_model models/speaker_model_final.keras
+python src/train_speaker.py --data_csv speaker_data.csv --out_dir models
 ```
 
-📈 Results & Visualizations
-📉 Loss Graph
+---
 
-(Generated during training)
+## 🎤 Real-Time Execution
+```
+python main.py --max_len 130 --emotion_model models/emotion_model_final.keras --speaker_model models/speaker_model_final.keras
+```
 
-📈 Accuracy Graph
+---
 
-(Training vs Validation)
+## 📈 Results
+- Loss curve  
+- Accuracy curve  
+- Confusion matrix  
 
-🔁 Confusion Matrix
+Generated during training.
 
-Emotion recognition performance per class
+---
 
-Speaker identification clarity
+## 📦 models/ Folder
+Do NOT upload `.keras` or `.h5` files.
 
-📦 models/ Folder (Important)
+Include only:
 
-Do NOT upload large model files.
-Include only this:
+```
+models/  
+└── README.md  
+```
 
-models/
-└── README.md
+---
 
+## 🤝 Contributing
+Pull requests welcome.
 
-With contents explaining how to download or train models.
+## 📜 License
+MIT License
 
-🤝 Contributing
+## 🧠 Conclusion
+VANI unifies **emotion detection** and **speaker recognition** in real time using modern deep learning, MFCC processing, and robust audio modeling.
 
-Pull requests are welcome!
-Suggestions for model improvement or dataset expansion are encouraged.
-
-📜 License
-
-MIT License (recommended)
-
-🧠 Conclusion
-
-VANI successfully integrates dual deep learning pipelines for real-time:
-
-Emotion Detection
-
-Speaker Recognition
-
-This system bridges ML and human interaction, enabling smarter emotional understanding and adaptive communication for real-world applications.
