@@ -1,0 +1,13 @@
+numpy
+pandas
+librosa
+sounddevice
+matplotlib
+seaborn
+scikit-learn
+tensorflow==2.15.0
+keras==2.15.0
+kagglehub
+joblib
+python-dotenv
+tqdm
