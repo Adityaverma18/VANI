@@ -1,27 +1,27 @@
-📌 VANI – Real-Time Speech Emotion & Speaker Recognition System
-🎙️ Emotion Detection + Speaker Identification (Dual Deep Learning System)
-🧠 Project Overview
+📌 VANI – Real-Time Speech Emotion & Speaker Recognition System.
+🎙️ Emotion Detection + Speaker Identification (Dual Deep Learning System).
+🧠 Project Overview.
 
 VANI is a real-time Speech Emotion Recognition (SER) and Speaker Recognition system built using Deep Learning.
 The system captures live audio, extracts MFCC features, and simultaneously predicts:
 
-🎭 Emotion (Happy, Sad, Angry, Fear, Neutral, Disgust, Surprise)
+🎭 Emotion (Happy, Sad, Angry, Fear, Neutral, Disgust, Surprise).
 
-🗣️ Speaker Identity (Unique voice-based recognition)
+🗣️ Speaker Identity (Unique voice-based recognition).
 
 VANI aims to assist individuals with Attention Deficit, increase emotional awareness, and support interactive intelligent systems.
 
 🚀 Key Features
 
-✔ Real-time emotion & speaker prediction
-✔ Dual-model architecture (Emotion + Speaker)
-✔ MFCC feature extraction
-✔ Conv1D + BiLSTM + Attention Network
-✔ Live microphone streaming using sounddevice
-✔ Dataset automation with KaggleHub
-✔ High accuracy with augmentation, cosine LR annealing, early stopping
-✔ Scalable, modular project structure
-✔ Train your own models or use pre-trained ones
+✔ Real-time emotion & speaker prediction.
+✔ Dual-model architecture (Emotion + Speaker).
+✔ MFCC feature extraction.
+✔ Conv1D + BiLSTM + Attention Network.
+✔ Live microphone streaming using sounddevice.
+✔ Dataset automation with KaggleHub.
+✔ High accuracy with augmentation, cosine LR annealing, early stopping.
+✔ Scalable, modular project structure.
+✔ Train your own models or use pre-trained ones.
 
 📂 Project Structure
 
@@ -53,14 +53,14 @@ VANI/
 
 📊 Datasets Used
 Emotion Recognition
-✔ RAVDESS
-✔ TESS
-✔ CREMA-D
-✔ SAVEE
+✔ RAVDESS.
+✔ TESS.
+✔ CREMA-D.
+✔ SAVEE.
 
 Speaker Recognition
-✔ Speaker Recognition Audio Dataset (Kaggle)
-✔ VoxCeleb-style structured dataset
+✔ Speaker Recognition Audio Dataset (Kaggle).
+✔ VoxCeleb-style structured dataset.
 
 Automatic download using:
 
